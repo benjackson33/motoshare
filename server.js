@@ -16,7 +16,8 @@ const sessionsRouter = require('./routes/sessions')
 
 
 const session = require('express-session')
-// const setUser = require('./middlewares/set_user')
+const setUser = require('./middleware/set_user')
+
 // const ensuredLoggedIn = require('./middlewares/ensured_logged_in.js')
 
 
@@ -33,25 +34,34 @@ app.use(methodOverride(function (req, res) {
         return method
     }
 }))
+
+app.use(session({
+    // cookie: { maxAge: 1000 * 60 * 60 * 24 * 3 },
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+}))
+
+
+
+app.use(setUser)
+
 app.use(expressLayouts)
 
-app.use("/", homeRouter)
-// app.use(requestLogger)
-//session will provide a session obect for req.session
-// app.use(session({
-//     cookie: { maxAge: 1000 * 60 * 60 * 24 * 3 },
-//     secret: 'keyboard cat',
-//     resave: false,
-//     saveUninitialized: true
-// }))
+// app.use("/", indexRouter)
 
-// app.use(setUser)
+app.use("/", homeRouter)
 
 app.use("/", bikesRouter)
 
-// app.use("/", sessionsRouter)
+app.use("/", sessionsRouter)
 
-// app.use("/", indexRouter)
+
+// app.use(requestLogger)
+//session will provide a session obect for req.session
+
+
+
 
 
 

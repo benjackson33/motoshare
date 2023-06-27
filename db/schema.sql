@@ -16,6 +16,9 @@ CREATE TABLE users (
     password_digest TEXT
 );
 
+
+update bikes set user_id = 1;
+
 INSERT INTO bikes (title, brand, model, category, image_url)
 VALUES ('Triumph Scrambler', 'Triumph', 'Street Twin', 'Scrambler', 'https://m.atcdn.co.uk/ect/media/w1224/28328d444508467f82c42713bca78db8.jpg');
 

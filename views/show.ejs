@@ -3,8 +3,8 @@
 <h3><%= bike.title %></h3>
 
 <img src="<%= bike.image_url %>" alt="">
-<p> <%= bike.brand %></p>
-<p> <%= bike.model %></p>
+<p>Brand - <%= bike.brand %></p>
+<p>Model - <%= bike.model %></p>
 
 
 <form action="/bikes/<%= bike.id %>" method="post">

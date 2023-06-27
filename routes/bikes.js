@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const db = require('../db/index.js')
 
-router.get('/dishes/new', (req, res) => {
+router.get('/bikes/new', (req, res) => {
         
     res.render("new")
 })
