@@ -1,11 +1,54 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: mistyrose;
+}
+
+img {
+  width: 200px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ui-card {
+  /* border: 1px solid red; */
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.ui-card > img {
+  width: 100%;
+  display: block;
+}
+
+.ui-card > footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  padding: 10px;
+}
+
+@media (min-width: 40rem) {
+  .all-bikes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
   }
-  
-  body {
-    background-color: mistyrose;
+}
+
+@media (min-width: 60rem) {
+  .all-bikes {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  
-  img {
-    width: 200px;
-  }
+}
+
+
+

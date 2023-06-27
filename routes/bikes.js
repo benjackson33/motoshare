@@ -1,13 +1,15 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../db/index.js')
+const checkLoggedIn = require('../middleware/checkLoggedIn')
 
-router.get('/bikes/new', (req, res) => {
+
+router.get('/bikes/new', checkLoggedIn, (req, res) => {
         
     res.render("new")
 })
 
-router.get('/bikes/:id', (req, res) => {
+router.get('/bikes/:id', checkLoggedIn, (req, res) => {
 
     let sql = `SELECT * FROM bikes WHERE id = $1;`
 
@@ -21,7 +23,7 @@ router.get('/bikes/:id', (req, res) => {
 
 })
 
-router.post('/bikes', (req, res) => {
+router.post('/bikes', checkLoggedIn, (req, res) => {
 
     let title = req.body.title
     let brand = req.body.brand
@@ -40,7 +42,7 @@ router.post('/bikes', (req, res) => {
 
 })
 
-router.delete('/bikes/:id', (req, res) => {
+router.delete('/bikes/:id', checkLoggedIn, (req, res) => {
 
    
 
@@ -51,7 +53,7 @@ router.delete('/bikes/:id', (req, res) => {
     })
 })
 
-router.get('/bikes/:id/edit', (req, res) => {
+router.get('/bikes/:id/edit', checkLoggedIn, (req, res) => {
     const sql = `SELECT * FROM bikes WHERE id = ${req.params.id};`
     db.query(sql, (err, dbRes) => {
       // rows is always an array [{ id: 2, title: 'cake' }]
@@ -61,7 +63,7 @@ router.get('/bikes/:id/edit', (req, res) => {
   })
 
 
-  router.put('/bikes/:id', (req, res) => {
+  router.put('/bikes/:id', checkLoggedIn, (req, res) => {
 
     const sql =
     `UPDATE bikes SET title = $1, 

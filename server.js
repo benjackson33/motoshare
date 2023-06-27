@@ -18,7 +18,6 @@ const sessionsRouter = require('./routes/sessions')
 const session = require('express-session')
 const setUser = require('./middleware/set_user')
 
-// const ensuredLoggedIn = require('./middlewares/ensured_logged_in.js')
 
 
 
@@ -43,12 +42,11 @@ app.use(session({
 }))
 
 
-
 app.use(setUser)
 
 app.use(expressLayouts)
 
-// app.use("/", indexRouter)
+app.use("/", indexRouter)
 
 app.use("/", homeRouter)
 
@@ -57,8 +55,7 @@ app.use("/", bikesRouter)
 app.use("/", sessionsRouter)
 
 
-// app.use(requestLogger)
-//session will provide a session obect for req.session
+
 
 
 

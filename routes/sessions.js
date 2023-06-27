@@ -1,5 +1,5 @@
 const express = require('express')
-const router =  express.Router()
+const router = express.Router()
 const db = require('../db')
 const bcrypt = require('bcrypt');
 
@@ -42,5 +42,52 @@ router.post("/login", (req, res) => {
         })
     })
 })
+
+router.delete("/logout", (req, res) => {
+    req.session.userId = undefined
+    res.redirect('/')
+})
+
+router.get('/signup', (req, res) => {
+    res.render("signup")
+})
+
+router.post("/new-user", (req, res) => {
+
+    let email = req.body.email;
+    let password = req.body.password;
+    let saltRounds = 10;
+
+    db.query(`SELECT * FROM users WHERE email = $1;`, [email], (err, dbRes) => {
+        if (err) {
+            console.log(err)
+        }
+        if (dbRes.rows.length === 1) {
+            console.log("user already found")
+            res.redirect("/new-user")
+        } else {
+            bcrypt.genSalt(saltRounds, (err, salt) => {
+                if (err) {
+                    console.log(err)
+                }
+                bcrypt.hash(password, salt, function (err, hash) {
+                    if (err) {
+                        res.redirect("/new-user")
+                    }
+                    const sql = `INSERT INTO users (email, password_digest) VALUES ($1, $2) RETURNING id;`
+                    db.query(sql, [email, hash], (err, dbRes) => {
+                        if (err) {
+                            console.log(err)
+                        } else {
+                            console.log("new user created")
+                            res.redirect("/")
+                        }
+                    })
+                })
+            })
+        }
+    })
+});
+
 
 module.exports = router
