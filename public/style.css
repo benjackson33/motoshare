@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: mistyrose;
+  }
+  
+  img {
+    width: 200px;
+  }
