@@ -1,0 +1,15 @@
+<h2>Bike Details</h2>
+
+<h3><%= bike.title %></h3>
+
+<img src="<%= bike.image_url %>" alt="">
+<p> <%= bike.brand %></p>
+<p> <%= bike.model %></p>
+
+
+<form action="/bikes/<%= bike.id %>" method="post">
+    <input type="hidden" value="DELETE" name="_method">
+    <button>Delete</button>  
+</form>
+
+<a href="/bikes/<%= bike.id %>/edit">edit bike details </a>

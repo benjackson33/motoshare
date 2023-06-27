@@ -38,20 +38,20 @@ app.use(expressLayouts)
 app.use("/", homeRouter)
 // app.use(requestLogger)
 //session will provide a session obect for req.session
-app.use(session({
-    ccookie: { maxAge: 1000 * 60 * 60 * 24 * 3 },
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true
-}))
+// app.use(session({
+//     cookie: { maxAge: 1000 * 60 * 60 * 24 * 3 },
+//     secret: 'keyboard cat',
+//     resave: false,
+//     saveUninitialized: true
+// }))
 
 // app.use(setUser)
 
+app.use("/", bikesRouter)
 
 // app.use("/", sessionsRouter)
 
 // app.use("/", indexRouter)
-// app.use("/", bikesRouter)
 
 
 
