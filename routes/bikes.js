@@ -2,9 +2,10 @@ const express = require('express')
 const router = express.Router()
 const db = require('../db/index.js')
 const checkLoggedIn = require('../middleware/checkLoggedIn')
+const authoriseUser = require('../middleware/authorisedUser.js')
 
 
-router.get('/bikes/new', checkLoggedIn, (req, res) => {
+router.get('/bikes/new',  checkLoggedIn, (req, res) => {
         
     res.render("new")
 })
@@ -42,7 +43,7 @@ router.post('/bikes', checkLoggedIn, (req, res) => {
 
 })
 
-router.delete('/bikes/:id', checkLoggedIn, (req, res) => {
+router.delete('/bikes/:id', checkLoggedIn, authoriseUser, (req, res) => {
 
    
 
@@ -53,7 +54,7 @@ router.delete('/bikes/:id', checkLoggedIn, (req, res) => {
     })
 })
 
-router.get('/bikes/:id/edit', checkLoggedIn, (req, res) => {
+router.get('/bikes/:id/edit',  checkLoggedIn, authoriseUser, (req, res) => {
     const sql = `SELECT * FROM bikes WHERE id = ${req.params.id};`
     db.query(sql, (err, dbRes) => {
       // rows is always an array [{ id: 2, title: 'cake' }]

@@ -4,6 +4,7 @@ const db = require('../db')
 const bcrypt = require('bcrypt');
 
 
+
 router.get("/login", (req, res) => {
     res.render("login")
 })
@@ -34,7 +35,7 @@ router.post("/login", (req, res) => {
 
             if (result) {
                 req.session.userId = dbRes.rows[0].id
-
+                req.flash('success', 'This is a success message'); 
                 res.redirect('/home')
             } else {
                 res.render("login")
@@ -45,14 +46,15 @@ router.post("/login", (req, res) => {
 
 router.delete("/logout", (req, res) => {
     req.session.userId = undefined
-    res.redirect('/')
+    req.flash('success', 'This is a success message'); 
+       res.redirect('/home')
 })
 
 router.get('/signup', (req, res) => {
     res.render("signup")
 })
 
-router.post("/new-user", (req, res) => {
+router.post("/signup", (req, res) => {
 
     let email = req.body.email;
     let password = req.body.password;
@@ -63,8 +65,8 @@ router.post("/new-user", (req, res) => {
             console.log(err)
         }
         if (dbRes.rows.length === 1) {
-            console.log("user already found")
-            res.redirect("/new-user")
+            console.log("email in use")
+            res.redirect("/login")
         } else {
             bcrypt.genSalt(saltRounds, (err, salt) => {
                 if (err) {
@@ -80,7 +82,7 @@ router.post("/new-user", (req, res) => {
                             console.log(err)
                         } else {
                             console.log("new user created")
-                            res.redirect("/")
+                            res.redirect("/home")
                         }
                     })
                 })

@@ -3,7 +3,7 @@ require('dotenv').config()
 const db = require('./index.js')
 const bcrypt = require('bcrypt');
 
-let email = 'ben@ben.com'
+let email = 'bj@ben.com'
 let plainTextPassword = "12345"
 let saltRounds = 10
 
