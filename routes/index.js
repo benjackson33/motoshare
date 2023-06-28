@@ -7,6 +7,8 @@ const db = require('../db/index.js')
 
 
 router.get('/', (req, res) => {
+
+    
     res.render("index", { layout: false })
 })
 

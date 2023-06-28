@@ -1,8 +1,6 @@
-<h2>Home</h2>
 
-
-
-<section class="all-bikes">
+<div class="card-container">
+<section class="all-bikes"> 
 
   <% for (let bike of bikes) { %>
     <div class="ui-card">
@@ -13,7 +11,7 @@
             <%= bike.title %>
           </a>
         </h2>
-        <h4></h4>
+      
       </section>
       <footer class="content">
         <span>Like</span>
@@ -22,6 +20,24 @@
     </div>
 
 
-<% } %>
+    <% } %>
 
-</section>
+</section> 
+
+<!-- <%# for (let bike of bikes) { %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="<%#= bike.image_url %>" alt="<%#= bike.title %>">
+
+      <section class="content">
+        <h2>
+          <a href="/bikes/<#%= bike.id %>">
+            <%#= bike.title %>
+          </a>
+        </h2>
+      
+      </section>
+    </div>
+
+    <%# } %> -->

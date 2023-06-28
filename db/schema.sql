@@ -16,6 +16,19 @@ CREATE TABLE users (
     password_digest TEXT
 );
 
+CREATE TABLE images (
+    id SERIAL PRIMARY KEY,
+    title TEXT,
+    image_url TEXT
+    
+);
+
+INSERT INTO images (title, image_url)
+VALUES ('background', 'https://kickstart.bikeexif.com/wp-content/uploads/2017/09/motorcycle-photographer-anthony-scott-enginethusiast.jpg');
+
+
+
+
 
 update bikes set user_id = 1;
 
