@@ -4,7 +4,9 @@
 
   <% for (let bike of bikes) { %>
     <div class="ui-card">
+      <div class="image-wrapper" >
       <img src="<%= bike.image_url %>" alt="<%= bike.title %>">
+    </div>
       <section class="content">
         <h2>
           <a href="/bikes/<%= bike.id %>">
