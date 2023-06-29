@@ -12,6 +12,7 @@ const indexRouter = require('./routes/index')
 const homeRouter = require('./routes/home')
 const bikesRouter = require('./routes/bikes')
 const sessionsRouter = require('./routes/sessions')
+const commentsRouter = require('./routes/comments')
 
 // const requestLogger = require("./middlewares/request_logger")
 
@@ -57,6 +58,8 @@ app.use("/", homeRouter)
 app.use("/", bikesRouter)
 
 app.use("/", sessionsRouter)
+
+app.use('/', commentsRouter)
 
 
 

@@ -5,8 +5,8 @@ const checkLoggedIn = require('../middleware/checkLoggedIn')
 const authoriseUser = require('../middleware/authorisedUser.js')
 
 
-router.get('/bikes/new',  checkLoggedIn, (req, res) => {
-        
+router.get('/bikes/new', checkLoggedIn, (req, res) => {
+
     res.render("new")
 })
 
@@ -15,7 +15,7 @@ router.get('/bikes/:id', checkLoggedIn, (req, res) => {
     let sql = `SELECT * FROM bikes WHERE id = $1;`
 
     db.query(sql, [req.params.id], (err, dbRes) => {
-        if (err){
+        if (err) {
             console.log(err);
         }
         let bike = dbRes.rows[0]  //taking out the first item in the object
@@ -30,7 +30,7 @@ router.post('/bikes', checkLoggedIn, (req, res) => {
     let brand = req.body.brand
     let model = req.body.model
     let imageUrl = req.body.image_url
-    
+
 
     const sql =
         `INSERT INTO bikes (title, brand, model, image_url, user_id) 
@@ -45,7 +45,7 @@ router.post('/bikes', checkLoggedIn, (req, res) => {
 
 router.delete('/bikes/:id', checkLoggedIn, authoriseUser, (req, res) => {
 
-   
+
 
     let sql = `DELETE FROM bikes WHERE id = $1;`
 
@@ -54,20 +54,20 @@ router.delete('/bikes/:id', checkLoggedIn, authoriseUser, (req, res) => {
     })
 })
 
-router.get('/bikes/:id/edit',  checkLoggedIn, authoriseUser, (req, res) => {
+router.get('/bikes/:id/edit', checkLoggedIn, authoriseUser, (req, res) => {
     const sql = `SELECT * FROM bikes WHERE id = ${req.params.id};`
     db.query(sql, (err, dbRes) => {
-      // rows is always an array [{ id: 2, title: 'cake' }]
-      let bike = dbRes.rows[0] 
-      res.render('edit', { bike: bike })
+        // rows is always an array [{ id: 2, title: 'cake' }]
+        let bike = dbRes.rows[0]
+        res.render('edit', { bike: bike })
     })
-  })
+})
 
 
-  router.put('/bikes/:id', checkLoggedIn, (req, res) => {
+router.put('/bikes/:id', checkLoggedIn, (req, res) => {
 
     const sql =
-    `UPDATE bikes SET title = $1, 
+        `UPDATE bikes SET title = $1, 
     image_url = $2
     WHERE id = $3;`
 

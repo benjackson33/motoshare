@@ -23,6 +23,14 @@ CREATE TABLE images (
     
 );
 
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    comment TEXT,
+    user_id INTEGER
+    
+);
+
+
 CREATE TABLE likes (
     id SERIAL PRIMARY KEY,
     likes TEXT,
