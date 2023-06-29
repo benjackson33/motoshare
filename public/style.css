@@ -11,7 +11,7 @@
 body {
 
   background-color: black;
-  font-family: 'Staatliches', cursive;;
+  font-family: 'Staatliches', cursive;
 
 }
 
@@ -23,7 +23,24 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  height: ;
+  height: 450px;
+}
+
+.index-topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.index-center {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 80px;
+  opacity: 50%;
+  cursor: pointer;
 }
 
 
@@ -32,7 +49,7 @@ body {
 li, a, button {
     font-weight: 500;
     font-size: 16px;
-    color: beige;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 
 }
@@ -71,7 +88,12 @@ header {
   cursor: pointer;
   transition: all 0.3s ease 0;
   color: black;
+  font-size: 16px;
 
+}
+
+.logsign {
+  display: inline-block;
 }
 
 .navbtn:hover {
@@ -94,7 +116,7 @@ a {
 
 .ui-card {
   /* border: 1px solid red; */
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
@@ -108,6 +130,7 @@ a {
 .ui-card>footer {
   display: flex;
   justify-content: space-between;
+  text-align: end;
 }
 
 .image-wrapper {
@@ -116,6 +139,7 @@ a {
  
  .image-wrapper > img {
     object-fit: cover;
+    object-position: center;
     width: 100%;
 } 
 
@@ -126,11 +150,18 @@ a {
 @media (min-width: 40rem) {
   .all-bikes {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
+    grid-template-columns: 1fr 1fr 1fr ;
+    margin-top: px;
     gap: 10px;
   }
 }
+
+
+  @media (min-width: 60rem){
+    .all-dishes {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 
 /* login */
 
@@ -166,6 +197,7 @@ a {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  color: black;
 }
 
 button[type="submit"] {
