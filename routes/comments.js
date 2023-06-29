@@ -8,8 +8,9 @@ const authoriseUser = require('../middleware/authorisedUser.js')
 router.get("/comments", (req, res) => {
 
     let userId = req.session.userId;
+    
   
-    let sql = `SELECT * FROM comments WHERE user_id = $1`;
+    let sql = `SELECT * FROM comments WHERE user_id, bikeid = $1,`;
   
     db.query(sql, [userId], (err, dbRes) => {
       if (err) {
@@ -28,15 +29,16 @@ router.get("/comments", (req, res) => {
 
 
 
-router.post("/comments", (req, res) => {
+router.post("/comments/", (req, res) => {
     let comment = req.body.comment
+    let bikeId = req.params.id
 
 
-    let sql = `INSERT INTO comments (comment, user_id)
-    VALUES ($1, $2)
+    let sql = `INSERT INTO comments (comment, bikeid, user_id)
+    VALUES ($1, $2, $3)
     RETURNING id;`
 
-    db.query(sql, [comment, req.session.userId], (err, dbRes) => {
+    db.query(sql, [comment, bikeId, req.session.userId], (err, dbRes) => {
         if(err){
             console.log(err);
         } else {

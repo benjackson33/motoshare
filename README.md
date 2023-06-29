@@ -20,7 +20,7 @@ Log in, share your latest project build, an amazing find at a show or on the str
 Using Trello to track and layout everything I needed to get done, I started off the project with wireframing a targeted outcome. Being the first back end and CRUD web app I have worked on I wanted to keep the flow simple and the style clean.
 
 WireFrames of the disired outcome
-![alt text](/images/wireframes.pdf)
+![alt text](/images/wireframes.jpg)
 
 Building the severside of the app took a bit longer than expected coming across more bugs than expected, thankfully nothing major, routing issue and the odd typo here and there.
 

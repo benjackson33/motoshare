@@ -76,6 +76,27 @@ router.put('/bikes/:id', checkLoggedIn, (req, res) => {
     })
 })
 
+
+router.post("/comments/bikes/:id", (req, res) => {
+    let comment = req.body.comment
+    let bikeId = req.params.id
+
+
+    let sql = `INSERT INTO comments (comment, bikeid, user_id)
+    VALUES ($1, $2, $3)
+    RETURNING id;`
+
+    db.query(sql, [comment, bikeId, req.session.userId], (err, dbRes) => {
+        if(err){
+            console.log(err);
+        } else {
+            res.redirect(`/show/${bikeId}`)
+        }
+    })
+})
+
+
+
 module.exports = router
 
 
