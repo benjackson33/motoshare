@@ -70,5 +70,19 @@ VALUES ('Primera Tracker', 'Honda', 'NX650', 'Tracker', 'http://siderockcycles.c
 INSERT INTO bikes (title, brand, model, category, image_url)
 VALUES ('Aquila Nera ', 'Moto Guzzi', 'Le Mans 1000', 'Cafe Racer', 'http://siderockcycles.com/bikes/aquilanera/4.jpg');
 
+INSERT INTO bikes (title, brand, model, category, image_url)
+VALUES ('Type 7A ', 'Yamaha', 'SR500', 'Scrambler', 'https://images.squarespace-cdn.com/content/v1/5a01cbe59f8dce508025d53d/1512496853709-GB5K0Z14GEQJLPUR5S7Q/Auto+Fabrica+Type+7A+%2811%29+%28Large%29.JPG?format=1500w');
+
+INSERT INTO bikes (title, brand, model, category, image_url)
+VALUES ('Type 8', 'Honda', 'CX500', 'Cafe Racer', 'https://images.squarespace-cdn.com/content/v1/5a01cbe59f8dce508025d53d/1512583150570-DFMZ5QZGH51EIZP88YN4/Auto+Fabrica+Type+8+16+%28Large%29.jpg?format=1500w');
+
+INSERT INTO bikes (title, brand, model, category, image_url)
+VALUES ('Type 6', 'Yamaha', 'XS650', 'Cafe Racer', 'https://images.squarespace-cdn.com/content/v1/5a01cbe59f8dce508025d53d/1512493050813-KDAORWVM0BTB97LV95JI/Auto+Fabrica+Type+6+%282%29.jpg?format=1500w');
+
+INSERT INTO bikes (title, brand, model, category, image_url)
+VALUES ('SkyFin', 'Moto Guzzi', 'SP1000 3', 'Cafe Racer', 'http://siderockcycles.com/bikes/skyfin/7.jpg');
+
+
+
 
 

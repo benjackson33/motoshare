@@ -172,9 +172,7 @@ a {
   overflow: hidden;
   margin-bottom: 10px;
 }
-.ui-card > h2 {
-  text-shadow: 2px 2px 5px black;
-}
+
 
 .ui-card>img {
   width: 100%;
@@ -199,6 +197,8 @@ a {
 
 .content {
   padding: 10px;
+  text-shadow: 6px 6px 15px black;
+  
 }
 
 @media (min-width: 40rem) {
@@ -321,6 +321,7 @@ button[type="submit"]:hover {
 
 .show-img-wrapper > img {
   border-radius: 10px;
+  width: 710px;
 }
 
 .delete-btn {
