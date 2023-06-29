@@ -82,7 +82,7 @@ router.post("/signup", (req, res) => {
                             console.log(err)
                         } else {
                             console.log("new user created")
-                            res.redirect("/home")
+                            res.redirect("/login")
                         }
                     })
                 })
