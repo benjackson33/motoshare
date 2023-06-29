@@ -1,17 +1,37 @@
-<h2>Bike Details</h2>
+<div class="show-container">
+<div class="show-title" >
+  <h2>Bike Details</h2>
+<h3>
+    <%= bike.title %>
+  </h3>
+</div>
+  <div class="show-img-wrapper">
 
-<h3><%= bike.title %></h3>
+    <img src="<%= bike.image_url %>" alt="">
 
-<img src="<%= bike.image_url %>" alt="">
-<p>Brand - <%= bike.brand %></p>
-<p>Model - <%= bike.model %></p>
+  </div>
+
+  <div class="bike-details">
+
+    <h3>
+      <%= bike.brand %>
+    </h3>
+    <h3>
+      <%= bike.model %>
+    </h3>
+    <div class="show-edit">
+      <a href="/bikes/<%= bike.id %>/edit">edit bike details </a>
+
+    <form action="/bikes/<%= bike.id %>" method="post">
+      <input type="hidden" value="DELETE" name="_method">
+      
+      <button class="delete-btn">Delete</button>
+    </form>
+    
+  </div>
+  </div>
 
 
-<form action="/bikes/<%= bike.id %>" method="post">
-    <input type="hidden" value="DELETE" name="_method">
-    <button>Delete</button>  
-</form>
-
-<a href="/bikes/<%= bike.id %>/edit">edit bike details </a>
 
 
+</div>

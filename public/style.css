@@ -12,7 +12,7 @@ body {
 
   background-color: black;
   font-family: 'Staatliches', cursive;
-
+  padding: 15px 15px;
 }
 
 /* index */
@@ -31,6 +31,7 @@ body {
   top: 8px;
   left: 16px;
   font-size: 18px;
+  color: white;
 }
 
 .index-center {
@@ -171,6 +172,9 @@ a {
   overflow: hidden;
   margin-bottom: 10px;
 }
+.ui-card > h2 {
+  text-shadow: 2px 2px 5px black;
+}
 
 .ui-card>img {
   width: 100%;
@@ -203,6 +207,7 @@ a {
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: px;
     gap: 10px;
+    justify-content: center;
   }
 }
 
@@ -220,11 +225,13 @@ a {
   margin: 0 auto;
   padding: 20px;
   border-radius: 5px;
+  
 }
 
 .login-form h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: white;
 }
 
 .login-form form {
@@ -234,6 +241,7 @@ a {
 
 .form-group {
   margin-bottom: 15px;
+  color: white;
 }
 
 .form-group label {
@@ -289,4 +297,41 @@ button[type="submit"]:hover {
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+/* show */
+
+.show-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 300px;
+  color: white;
+  flex-direction: row;
+}
+
+.show-edit {
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.show-img-wrapper {
+  margin: 15px 15px;
+  border-radius: 10px;
+}
+
+.show-img-wrapper > img {
+  border-radius: 10px;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border-width: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
 }
