@@ -23,6 +23,15 @@ CREATE TABLE images (
     
 );
 
+CREATE TABLE likes (
+    id SERIAL PRIMARY KEY,
+    likes TEXT,
+    user_id INTEGER
+    
+);
+
+
+
 INSERT INTO images (title, image_url)
 VALUES ('background', 'https://kickstart.bikeexif.com/wp-content/uploads/2017/09/motorcycle-photographer-anthony-scott-enginethusiast.jpg');
 
