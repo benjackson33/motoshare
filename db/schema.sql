@@ -26,7 +26,7 @@ CREATE TABLE images (
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
     comment TEXT,
-    bikeId INTEGER,
+    bikeid INTEGER,
     user_id INTEGER
     
 );
