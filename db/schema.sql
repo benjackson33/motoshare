@@ -65,11 +65,11 @@ VALUES ('OJO Cafe Racer', 'BMW', 'R100RS', 'Cafe Racer', 'https://kevilsspeedsho
 INSERT INTO bikes (title, brand, model, category, image_url)
 VALUES ('Street Scrambler', 'BMW', 'R100GS', 'Scrambler', 'https://kevilsspeedshop.com/bmw/wp-content/uploads/2019/10/17F8ED2C-18E0-4F9B-A92F-D153068025F1-708x531.jpeg');
 
-INSERT INTO bikes (title, brand, model, category, image_url)
-VALUES ('Primera Tracker', 'Honda', 'NX650', 'Tracker', 'http://siderockcycles.com/bikes/primeratracker/9.jpg');
+-- INSERT INTO bikes (title, brand, model, category, image_url)
+-- VALUES ('Primera Tracker', 'Honda', 'NX650', 'Tracker', 'http://siderockcycles.com/bikes/primeratracker/9.jpg');
 
-INSERT INTO bikes (title, brand, model, category, image_url)
-VALUES ('Aquila Nera ', 'Moto Guzzi', 'Le Mans 1000', 'Cafe Racer', 'http://siderockcycles.com/bikes/aquilanera/4.jpg');
+-- INSERT INTO bikes (title, brand, model, category, image_url)
+-- VALUES ('Aquila Nera ', 'Moto Guzzi', 'Le Mans 1000', 'Cafe Racer', 'http://siderockcycles.com/bikes/aquilanera/4.jpg');
 
 INSERT INTO bikes (title, brand, model, category, image_url)
 VALUES ('Type 7A ', 'Yamaha', 'SR500', 'Scrambler', 'https://images.squarespace-cdn.com/content/v1/5a01cbe59f8dce508025d53d/1512496853709-GB5K0Z14GEQJLPUR5S7Q/Auto+Fabrica+Type+7A+%2811%29+%28Large%29.JPG?format=1500w');
@@ -80,8 +80,28 @@ VALUES ('Type 8', 'Honda', 'CX500', 'Cafe Racer', 'https://images.squarespace-cd
 INSERT INTO bikes (title, brand, model, category, image_url)
 VALUES ('Type 6', 'Yamaha', 'XS650', 'Cafe Racer', 'https://images.squarespace-cdn.com/content/v1/5a01cbe59f8dce508025d53d/1512493050813-KDAORWVM0BTB97LV95JI/Auto+Fabrica+Type+6+%282%29.jpg?format=1500w');
 
+
+
+
 INSERT INTO bikes (title, brand, model, category, image_url)
-VALUES ('SkyFin', 'Moto Guzzi', 'SP1000 3', 'Cafe Racer', 'http://siderockcycles.com/bikes/skyfin/7.jpg');
+VALUES ('Type 19', 'Triumph', 'T120R', 'Scrambler', 'https://images.squarespace-cdn.com/content/v1/5a01cbe59f8dce508025d53d/1606750588928-VEA11P34HUC7EAF9TD3M/Type+19+%288%29+%28Large%29.jpg?format=2500w');
+
+INSERT INTO bikes (title, brand, model, category, image_url)
+VALUES ('Type 18', 'BMW', 'R nineT', 'Street', 'https://images.squarespace-cdn.com/content/v1/5a01cbe59f8dce508025d53d/1560351789498-LQAHSJ7F4VT0GM5740X2/Autof+Fabrica+Type+18+%285%29.jpg?format=2500w');
+
+INSERT INTO bikes (title, brand, model, category, image_url)
+VALUES ('Type 0.1', 'Auto Fabrica', 'Italjet', 'Mini bike', 'https://images.squarespace-cdn.com/content/v1/5a01cbe59f8dce508025d53d/1512642823367-11GO7VWV0LVLZFHG9VFM/Auto+Fabrica+Type+01+%286%29+%28Large%29.jpg?format=2500w');
+
+
+
+
+
+
+
+
+
+-- INSERT INTO bikes (title, brand, model, category, image_url)
+-- VALUES ('SkyFin', 'Moto Guzzi', 'SP1000 3', 'Cafe Racer', 'http://siderockcycles.com/bikes/skyfin/7.jpg');
 
 
 
