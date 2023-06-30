@@ -77,6 +77,38 @@ router.put('/bikes/:id', checkLoggedIn, (req, res) => {
 })
 
 
+router.get('/bikes/category/scrambler', checkLoggedIn, (req, res) => {
+
+    let sql = `SELECT * FROM bikes WHERE category = 'Scrambler';`
+
+    db.query(sql, (err, dbRes) => {
+        if (err) {
+            console.log(err);
+        }
+        let bikes = dbRes.rows  //taking out the first item in the object
+        res.render("scrambler", { bikes: bikes })
+    })
+
+})
+
+
+router.get('/bikes/category/caferacer', checkLoggedIn, (req, res) => {
+
+    
+    let sql = `SELECT * FROM bikes WHERE category = 'Cafe Racer';`
+
+    db.query(sql, (err, dbRes) => {
+        if (err) {
+            console.log(err);
+        }
+        let bikes = dbRes.rows  //taking out the first item in the object
+        res.render("cafe-racer", { bikes: bikes })
+    })
+
+})
+
+
+
 // router.post("/bikes/:id/commen", (req, res) => {
 //     let comment = req.body.comment
 //     let bikeId = req.params.id

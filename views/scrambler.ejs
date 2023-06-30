@@ -1,0 +1,28 @@
+<div class="card-container">
+    <section class="all-bikes"> 
+    
+      <% for (let bike of bikes) { %>
+        <div class="ui-card">
+          <div class="image-wrapper" >
+          <img src="<%= bike.image_url %>" alt="<%= bike.title %>">
+          </div>
+          <section class="content">
+            <h2>
+              <a href="/bikes/<%= bike.id %>">
+                <%= bike.title %>
+              </a>
+            </h2>
+            <footer class="content">
+            <span></span>
+            
+          </footer>
+          </section>
+         
+            
+          </footer>
+        </div>
+    
+    
+        <% } %>
+    
+    </section> 
